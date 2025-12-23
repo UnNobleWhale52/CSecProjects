@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio Projects - Loki's Resume Builder</title>
+    <style>
+        * {
+            margin:  0;
+            padding: 0;
+            box-sizing:  border-box;
+        }
+
+        body {
+            background:  linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid #00d4ff;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #00d4ff;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #00d4ff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .intro h2 {
+            color: #00d4ff;
+            font-size: 1.5em;
+            margin-bottom:  15px;
+        }
+
+        . intro p {
+            color: #e0e0e0;
+            font-size: 1.1em;
+        }
+
+        .project-card {
+            background: rgba(26, 26, 46, 0.8);
+            border:  2px solid #333;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom:  30px;
+            transition:  all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 8px 20px;
+            border-radius:  25px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            color: #ffd700;
+            font-size: 1.8em;
+            font-weight:  bold;
+            margin-bottom:  15px;
+        }
+
+        . project-desc {
+            color: #e0e0e0;
+            font-size: 1.05em;
+            margin-bottom:  20px;
+            line-height: 1.8;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom:  10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .goals-list, .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .goals-list li, .skills-list li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .goals-list li: before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .skills-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .deliverable {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            border-radius:  6px;
+            padding:  12px;
+            margin-top: 15px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .code-tech {
+            color: #00ff88;
+            font-weight:  bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top:  3px solid #00d4ff;
+            color: #888;
+        }
+
+        footer p {
+            font-size:  1.1em;
+        }
+
+        . footer-highlight {
+            color: #ffd700;
+            font-weight:  bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Cybersecurity Portfolio Projects</h1>
+            <p class="subtitle">Resume-Ready Practical Demonstrations by Loki</p>
+        </header>
+
+        <div class="intro">
+            <h2>🎯 Purpose of This Document</h2>
+            <p>
+                This file outlines <span class="highlight">6 comprehensive cybersecurity projects</span> designed to showcase 
+                <span class="highlight">real-world skills</span> that hiring managers actively look for. Each project bridges 
+                <span class="code-tech">beginner to intermediate</span> competency and demonstrates hands-on expertise in 
+                <span class="code-tech">incident response, threat analysis, frameworks, SIEM operations, and offensive security thinking</span>.
+            </p>
+        </div>
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 01</span>
+            <h2 class="project-title">🚨 Incident Response Report — Server Breach Investigation</h2>
+            <p class="project-desc">
+                Simulate a <span class="highlight">realistic company server breach</span> where a threat actor gains unauthorized access.  
+                You will inspect logs (authentication, web server, firewall), identify the attack timeline, extract IoCs (Indicators of Compromise), 
+                and write a <span class="highlight">professional incident response report</span> answering the <span class="code-tech">5 W's</span>: 
+                What happened, When, Where, Who (threat actor profile), and Why (motive/impact).
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Create a fictional but realistic attack scenario (multi-stage breach)</li>
+                <li>Generate sample logs (auth logs, web access logs, firewall logs)</li>
+                <li>Perform log analysis to identify suspicious activity</li>
+                <li>Build a detailed timeline of the attack</li>
+                <li>Extract IoCs (IP addresses, file hashes, URLs)</li>
+                <li>Write a structured incident report with findings and recommendations</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>Log analysis and correlation</li>
+                <li>Incident response methodology</li>
+                <li>Threat actor profiling</li>
+                <li>IoC identification and documentation</li>
+                <li>Professional report writing</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: incident_response_report.html + incident_response_report.pdf
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 02</span>
+            <h2 class="project-title">📊 TCPdump Log Analysis Guide</h2>
+            <p class="project-desc">
+                Master the art of <span class="code-tech">packet-level network analysis</span> using TCPdump. This guide teaches you 
+                how to <span class="highlight">read raw packet captures</span>, identify attack patterns (DDoS, port scans, data exfiltration), 
+                extract IoCs from network traffic, and correlate findings with the <span class="highlight">Pyramid of Pain</span> framework 
+                to understand how attackers think and how defenders can disrupt them.
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Explain TCPdump syntax and common flags</li>
+                <li>Show how to capture and read packet data</li>
+                <li>Demonstrate analysis of different attack types (SYN flood, DNS tunneling, etc.)</li>
+                <li>Teach IoC extraction from packet captures (malicious IPs, domains, ports)</li>
+                <li>Map findings to the Pyramid of Pain (hash values → IP addresses → TTPs)</li>
+                <li>Provide pro tips for real-world SOC work</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>Network traffic analysis</li>
+                <li>TCPdump command mastery</li>
+                <li>Attack pattern recognition</li>
+                <li>IoC extraction and documentation</li>
+                <li>Pyramid of Pain framework application</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: tcpdump_analysis_guide.html + tcpdump_analysis_guide.pdf
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 03</span>
+            <h2 class="project-title">📋 Cybersecurity Frameworks & Report Writing Masterclass</h2>
+            <p class="project-desc">
+                Deep dive into <span class="highlight">industry-standard frameworks</span> that every cybersecurity professional must know:  
+                <span class="code-tech">NIST Cybersecurity Framework (CSF)</span>, <span class="code-tech">MITRE ATT&CK</span>, 
+                <span class="code-tech">Cyber Kill Chain</span>, and <span class="highlight">professional report writing</span>.  
+                This project showcases your ability to map real-world incidents to these frameworks and communicate findings effectively.
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Explain NIST CSF (Identify, Protect, Detect, Respond, Recover)</li>
+                <li>Break down MITRE ATT&CK tactics, techniques, and procedures (TTPs)</li>
+                <li>Demonstrate Cyber Kill Chain phases with real examples</li>
+                <li>Show how to map an incident to these frameworks</li>
+                <li>Provide templates and best practices for report writing</li>
+                <li>Include sample reports with proper structure and language</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>NIST CSF implementation knowledge</li>
+                <li>MITRE ATT&CK framework proficiency</li>
+                <li>Cyber Kill Chain understanding</li>
+                <li>Framework-to-incident mapping</li>
+                <li>Professional technical writing</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: frameworks_and_reporting.html + frameworks_and_reporting.pdf
+            </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 04</span>
+            <h2 class="project-title">🌐 Network Security Deep Dive</h2>
+            <p class="project-desc">
+                Go beyond basic networking — focus on <span class="highlight">security implications</span>.  Learn why protocols like 
+                <span class="code-tech">WEP, WPA, WPA2, TKIP, SSL/TLS</span> have vulnerabilities, how attackers exploit them, and 
+                why certain <span class="code-tech">ports (20, 21, 23, 25, 135, 139, 445, etc.)</span> are high-risk targets.  
+                This project emphasizes <span class="highlight">port security, protocol weaknesses, and attack surface reduction</span>.
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Brief intro to networking fundamentals (just enough context)</li>
+                <li>Jump into protocol vulnerabilities (WEP cracking, WPA2 KRACK, SSL POODLE, etc.)</li>
+                <li>Explain dangerous ports and why they should be filtered/closed</li>
+                <li>Demonstrate real attack scenarios (FTP abuse, Telnet sniffing, SMB exploits)</li>
+                <li>Provide defense strategies (port filtering, VLANs, encryption upgrades)</li>
+                <li>Include practical examples with code snippets</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>Network protocol security knowledge</li>
+                <li>Vulnerability assessment (encryption weaknesses)</li>
+                <li>Port security and firewall rules</li>
+                <li>Attack surface analysis</li>
+                <li>Network hardening techniques</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: network_security_guide.html + network_security_guide.pdf
+            </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 05</span>
+            <h2 class="project-title">🖥️ SIEM & IDS/IPS Operations Handbook</h2>
+            <p class="project-desc">
+                Showcase your <span class="highlight">hands-on SIEM and IDS/IPS expertise</span>. This project demonstrates 
+                real-world <span class="code-tech">SOC workflows</span> using tools like <span class="code-tech">Splunk, ELK Stack, Snort, Suricata</span>. 
+                Learn how to build dashboards, write detection rules, triage alerts, and respond to security events like a pro analyst.
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Explain what SIEM, IDS, and IPS are (and their differences)</li>
+                <li>Demonstrate Splunk SPL queries for common use cases</li>
+                <li>Show how to build a SIEM dashboard for monitoring</li>
+                <li>Create custom detection rules for Snort/Suricata</li>
+                <li>Walk through alert triage and investigation workflow</li>
+                <li>Provide real-world SOC scenarios and response playbooks</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>SIEM tool proficiency (Splunk/ELK)</li>
+                <li>IDS/IPS configuration and rule writing</li>
+                <li>Dashboard creation and monitoring</li>
+                <li>Alert triage and incident investigation</li>
+                <li>SOC analyst workflows</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: siem_ids_ips_handbook.html + siem_ids_ips_handbook.pdf
+            </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+            <span class="project-number">PROJECT 06</span>
+            <h2 class="project-title">🎭 Red Team Simulation — Threat Actor Perspective</h2>
+            <p class="project-desc">
+                Think like a hacker.  This project puts you in the <span class="highlight">offensive mindset</span>, where you plan and execute 
+                a <span class="code-tech">hyperrealistic attack simulation</span> against a fictional organization.  Explore <span class="highlight">threat vectors</span>, 
+                initial access methods, lateral movement, privilege escalation, persistence, and data exfiltration — all while documenting 
+                <span class="code-tech">TTPs</span> (Tactics, Techniques, and Procedures).
+            </p>
+
+            <h3 class="section-title">🎯 Goals to Achieve</h3>
+            <ul class="goals-list">
+                <li>Create a realistic corporate network scenario</li>
+                <li>Plan an attack chain from reconnaissance to exfiltration</li>
+                <li>Demonstrate initial access (phishing, exploit, credential stuffing)</li>
+                <li>Show lateral movement techniques (pass-the-hash, pivoting)</li>
+                <li>Explain privilege escalation and persistence mechanisms</li>
+                <li>Document the full attack as a red team engagement report</li>
+            </ul>
+
+            <h3 class="section-title">🔥 Skills Demonstrated</h3>
+            <ul class="skills-list">
+                <li>Offensive security mindset</li>
+                <li>Attack chain modeling</li>
+                <li>Threat vector analysis</li>
+                <li>TTPs documentation</li>
+                <li>Red team simulation and reporting</li>
+            </ul>
+
+            <div class="deliverable">
+                📦 Deliverable: red_team_simulation. html + red_team_simulation. pdf
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                💪 Built by <span class="footer-highlight">Loki</span> — 
+                Demonstrating <span class="footer-highlight">real-world cybersecurity skills</span> for the job market
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                These projects are designed to be <span class="footer-highlight">resume-worthy</span>, 
+                <span class="footer-highlight">interview-ready</span>, and <span class="footer-highlight">employer-impressive</span>. 
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
