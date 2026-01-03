@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[GUIDE TITLE] - Linux Security Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #ffd700;
+        }
+
+        .nav-home {
+            font-size: 1.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 3px solid #00d4ff;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            color: #00d4ff;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .meta-info {
+            margin-top: 15px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #00d4ff;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        h3 {
+            color: #ffd700;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            color: #00ff88;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .code-block .comment {
+            color: #666;
+        }
+
+        .code-block .command {
+            color: #00d4ff;
+        }
+
+        .code-block .output {
+            color: #e0e0e0;
+        }
+
+        code {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box.tip {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid #00ff88;
+        }
+
+        .info-box.warning {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+        }
+
+        .info-box.note {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+        }
+
+        .info-box h4 {
+            color: inherit;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-box.tip h4 { color: #00ff88; }
+        .info-box.warning h4 { color: #ffd700; }
+        .info-box.note h4 { color: #00d4ff; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #333;
+        }
+
+        th {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Highlight classes */
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .code-tech {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        /* Navigation buttons */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+        }
+
+        .page-nav a {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-nav a:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .page-nav .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 3px solid #00d4ff;
+            color: #888;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+
+            .nav-links {
+                gap: 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="../index.html" class="nav-home">← Back to Home</a>
+            <div class="nav-links">
+                <!-- Add quick navigation links to sections -->
+                <a href="#section1">Section 1</a>
+                <a href="#section2">Section 2</a>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1>🔧 [Your Guide Title Here]</h1>
+            <p class="subtitle">Guide XX - [Category Name]</p>
+            <p class="meta-info">Last updated: [Month Year] | Reading time: ~XX minutes</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="content-section" id="section1">
+            <h2>📖 Introduction</h2>
+            <p>
+                Write your introduction here. Explain what this guide covers and why it's important.
+                Use <span class="highlight">highlight</span> for important terms and 
+                <span class="code-tech">code-tech</span> for technical terms.
+            </p>
+
+            <h3>Key Topics Covered</h3>
+            <ul>
+                <li>Topic 1</li>
+                <li>Topic 2</li>
+                <li>Topic 3</li>
+            </ul>
+
+            <div class="info-box note">
+                <h4>📝 Note</h4>
+                <p>
+                    Use note boxes for additional context or prerequisites.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Section Example -->
+        <section class="content-section" id="section2">
+            <h2>🔧 Main Content Section</h2>
+            <p>
+                Your main content goes here. Break it into logical sections with clear headings.
+            </p>
+
+            <h3>Subsection with Code</h3>
+            <p>Here's an example of how to format code blocks:</p>
+
+            <div class="code-block">
+                <pre><span class="comment"># This is a comment</span>
+<span class="command">your-command-here</span>
+<span class="output">Expected output here</span></pre>
+            </div>
+
+            <div class="info-box tip">
+                <h4>💡 Pro Tip</h4>
+                <p>
+                    Use tip boxes for helpful advice and best practices.
+                </p>
+            </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ Warning</h4>
+                <p>
+                    Use warning boxes for important cautions or potential pitfalls.
+                </p>
+            </div>
+
+            <h3>Table Example</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                    </tr>
+                    <tr>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Practice/Summary Section -->
+        <section class="content-section">
+            <h2>🎯 Practice Exercises</h2>
+            <ol>
+                <li><strong>Exercise 1:</strong> Description of exercise</li>
+                <li><strong>Exercise 2:</strong> Description of exercise</li>
+                <li><strong>Exercise 3:</strong> Description of exercise</li>
+            </ol>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <h2>📋 Summary</h2>
+            <p>Summarize the key takeaways from this guide:</p>
+            <ul>
+                <li>Key point 1</li>
+                <li>Key point 2</li>
+                <li>Key point 3</li>
+            </ul>
+        </section>
+
+        <!-- Page Navigation -->
+        <div class="page-nav">
+            <a href="[previous-guide].html">← Previous: [Title]</a>
+            <a href="[next-guide].html">Next: [Title] →</a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                🐧 <strong>Linux Security Guide</strong> — 
+                <a href="../index.html">Return to Home</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Have suggestions or corrections? <a href="https://github.com/UnNobleWhale52/CSecProjects">Contribute on GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
